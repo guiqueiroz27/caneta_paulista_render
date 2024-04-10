@@ -14,6 +14,8 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+gsheet_key= os.environ["gsheet_key"]
+
 """# Função raspagem governo de SP"""
 
 def leis_governo_sp(data_inicio, data_fim):
@@ -224,7 +226,7 @@ def leis_prefeitura_sp (data_inicio, data_fim):
 
 """# Função acessando e gravando dados novos GSheet"""
 
-def atualizar_planilha(data_inicio='01/01/2024', planilha_key='1RcuCbxS4rqLAt6TUNyfkWoqcxwqpr64fwLMLTNzFvtY', arquivo_credenciais="/Users/guilhermequeiroz/Desktop/INSPER/ALGORITMOS AUTOMAÇÃO/trabalho final pt.2/insperaa-f16b8130bed9.json"):
+def atualizar_planilha(data_inicio='01/01/2024', planilha_key=gsheet_key, arquivo_credenciais="insperaa-f16b8130bed9.json"):
     # Obtenha a data atual
     data_fim = datetime.now().strftime('%d/%m/%Y')
 
